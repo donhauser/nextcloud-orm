@@ -15,7 +15,7 @@ setuptools.setup(
     #author_email='',
     url='https://github.com/donhauser/nextcloud-orm',
     packages=['nextcloud_orm'],
-    package_data={'': ['LICENSE', 'templates/*', 'static/*', 'migrations/*']},
+    package_data={'': ['LICENSE']},
     include_package_data=True,
     python_requires=">=3.6",
     install_requires=["nextcloud-api-wrapper>=0.2.1.5"],

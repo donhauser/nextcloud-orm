@@ -20,4 +20,8 @@ def connect(endpoint=None,
     kwargs['session_kwargs'] = session_kwargs
     kwargs['session'] = session
     
+    if not session and not all(kwargs[x] for x in ['endpoint', 'user', 'password']):
+        raise ValueError("Your connection settings are incomplete. Either specify 'endpoint', 'user' and 'password', or pass a 'session'. "+
+                         "If you like to use environment variables, you may set 'NEXTCLOUD_HOSTNAME', 'NEXTCLOUD_ADMIN_USER' and 'NEXTCLOUD_ADMIN_PASSWORD'")
+    
     managers.NextcloudManager.api = nextcloud.NextCloud(**kwargs) 
