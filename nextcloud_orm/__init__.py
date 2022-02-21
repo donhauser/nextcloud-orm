@@ -1,8 +1,7 @@
 import os
 import nextcloud
 
-from . import models
-from . import managers
+from . import models, managers
 
 def connect(endpoint=None,
             user=None,
